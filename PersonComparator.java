@@ -17,14 +17,6 @@ public class PersonComparator {
         });
 
         System.out.println("=== Sorted Asc GivenName ===");
-        for(Person p:personList){
-            System.out.println(p.getGivenName());
-            Collections.sort(personList, (p1, p2) -> p2.getGivenName().compareTo(p1.getGivenName()));
-        }
-
-        // Use Lambda instead
-        System.out.println("=== Sorted Asc GivenName ===");
-        //  call Collections.sort with lambda
 
         for(Person p:personList){
             System.out.println(p.getGivenName());
