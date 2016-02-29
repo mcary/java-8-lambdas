@@ -9,10 +9,8 @@ public class PersonComparator {
     public static void main(String[] args) {
         List<Person> personList = Person.createShortList();
 
-        // Sort with a lambda
-        Collections.sort(personList,
-                         (p1, p2) ->
-                             p1.getGivenName().compareTo(p2.getGivenName()));
+        // Sort with a method reference -- can the reference be more concise?
+        Collections.sort(personList, PersonComparator::compare);
 
         System.out.println("=== Sorted Asc GivenName ===");
 
@@ -20,5 +18,9 @@ public class PersonComparator {
             System.out.println(p.getGivenName());
         }
 
+    }
+
+    public static int compare(Person p1, Person p2) {
+        return p1.getGivenName().compareTo(p2.getGivenName());
     }
 }
