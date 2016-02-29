@@ -9,12 +9,10 @@ public class PersonComparator {
     public static void main(String[] args) {
         List<Person> personList = Person.createShortList();
 
-        // Sort with Inner Class
-        Collections.sort(personList, new Comparator<Person>() {
-            public int compare(Person p1, Person p2) {
-                return p1.getGivenName().compareTo(p2.getGivenName());
-            }
-        });
+        // Sort with a lambda
+        Collections.sort(personList,
+                         (p1, p2) ->
+                             p1.getGivenName().compareTo(p2.getGivenName()));
 
         System.out.println("=== Sorted Asc GivenName ===");
 
